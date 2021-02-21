@@ -85,3 +85,67 @@ topics:
     theory_id: 6938
   - title: Split and join
     theory_id: 6972
+  2:
+  - title: Matrix Multiplication
+    theory_id: 7372
+  - title: Immutability
+    theory_id: 7929
+  - title: IDE
+    theory_id: 10996
+  - title: Intro to computational thinking
+    theory_id: 8742
+  - title: Components of computational thinking
+    theory_id: 8745
+  - title: Declaring a function
+    theory_id: 5900
+  - title: Arguments
+    theory_id: 7248
+  - title: Functional decomposition
+    theory_id: 9571
+  - title: Default arguments
+    theory_id: 10295
+  - title: Args
+    theory_id: 8560
+  - title: PyCharm basics
+    theory_id: 6193
+  - title: Tuple
+    theory_id: 7462
+  - title: Operations with list
+    theory_id: 6031
+  - title: Identity testing
+    theory_id: 8077
+  - title: Objects in Python
+    theory_id: 9262
+  3:
+  - title: Introduction to OOP
+    theory_id: 3614
+  - title: Scopes
+    theory_id: 6322
+  - title: Class
+    theory_id: 6661
+  - title: Class instances
+    theory_id: 6669
+  - title: Methods
+    theory_id: 6931
+  - title: Methods and attributes
+    theory_id: 6981
+  - title: String formatting
+    theory_id: 6037
+  - title: Slicing
+    theory_id: 6177
+  4:
+  - title: A determinant of a matrix
+    theory_id: 9184
+  - title: Computer algorithms
+    theory_id: 4953
+  - title: Algorithms in Python
+    theory_id: 7316
+  - title: Recursion basics
+    theory_id: 5984
+  - title: Recursion in Python
+    theory_id: 7665
+  5:
+  - title: Load module
+    theory_id: 6019
+  - title: Math functions
+    theory_id: 6256

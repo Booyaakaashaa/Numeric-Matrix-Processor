@@ -1,4 +1,3 @@
-import sys
 m, n = input().strip().split()
 m, n = int(m), int(n)
 arr1 = []
@@ -11,11 +10,11 @@ arr2 = []
 for i in range(x):
     arr2.append(input().strip().split())
     arr2[i] = [int(k) for k in arr2[i]]
-add = []
+add = [[0] * n] * m
 if m == x and n == y:
     for i in range(m):
         for j in range(n):
             add[i][j] = arr1[i][j] + arr2[i][j]
         print(*add[i])
 else:
-    print("ERROR", file=sys.stderr)
+    print("ERROR")

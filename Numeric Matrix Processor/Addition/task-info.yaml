@@ -222,5 +222,8 @@ files:
     print('Hello, world!')
   learner_created: false
 feedback_link: https://hyperskill.org/projects/96/stages/528/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sun, 21 Feb 2021 21:44:14 UTC
 record: -1

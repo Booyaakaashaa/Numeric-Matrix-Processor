@@ -1,4 +1,3 @@
-import re
 import string
 from collections import namedtuple
 
@@ -18,23 +17,17 @@ class CalcTest(StageTest):
         return [
             TestCase(
                 stdin=
-                '4 5\n'
-                '1 2 3 4 5\n'
-                '3 2 3 2 1\n'
-                '8 0 9 9 1\n'
-                '1 3 4 5 6\n'
-                '4 5\n'
-                '1 1 4 4 5\n'
-                '4 4 5 7 8\n'
-                '1 2 3 9 8\n'
-                '1 0 0 0 1\n'
+                '3 3\n'
+                '1 2 3\n'
+                '4 5 6\n'
+                '7 8 9\n'
+                '3\n'
                 ,
                 attach=TestClue(
                     answer=
-                    '2 3 7 8 10\n'
-                    '7 6 8 9 9\n'
-                    '9 2 12 18 9\n'
-                    '2 3 4 5 7\n'
+                    '3 6 9\n'
+                    '12 15 18\n'
+                    '21 24 27\n'
                     ,
                     feedback=
                     ''
@@ -43,17 +36,14 @@ class CalcTest(StageTest):
             TestCase(
                 stdin=
                 '2 3\n'
-                '1 4 5\n'
-                '4 5 5\n'
-                '4 5\n'
-                '0 1 0 4 5\n'
-                '1 7 8 9 4\n'
-                '1 2 3 5 6\n'
-                '1 3 4 3 8\n'
+                '1 2 3\n'
+                '4 5 6\n'
+                '0\n'
                 ,
                 attach=TestClue(
                     answer=
-                    'ERROR\n'
+                    '0 0 0\n'
+                    '0 0 0\n'
                     ,
                     feedback=
                     ''
@@ -61,23 +51,21 @@ class CalcTest(StageTest):
             ),
             TestCase(
                 stdin=
-                '4 5\n'
-                '4 2 3 4 5\n'
-                '3 5 3 2 1\n'
-                '8 0 9 9 1\n'
-                '1 3 4 5 9\n'
-                '4 5\n'
-                '1 1 4 4 5\n'
-                '4 4 5 7 8\n'
-                '1 2 3 9 8\n'
-                '1 0 0 0 1\n'
+                '5 5\n'
+                '1 4 6 7 8\n'
+                '1 9 5 2 2\n'
+                '1 4 3 5 7\n'
+                '1 4 6 4 1\n'
+                '1 4 5 7 1\n'
+                '5\n'
                 ,
                 attach=TestClue(
                     answer=
-                    '5 3 7 8 10\n'
-                    '7 9 8 9 9\n'
-                    '9 2 12 18 9\n'
-                    '2 3 4 5 10\n'
+                    '5 20 30 35 40\n'
+                    '5 45 25 10 10\n'
+                    '5 20 15 25 35\n'
+                    '5 20 30 20 5\n'
+                    '5 20 25 35 5\n'
                     ,
                     feedback=
                     ''
@@ -87,12 +75,25 @@ class CalcTest(StageTest):
                 stdin=
                 '1 1\n'
                 '1\n'
+                '1\n'
+                ,
+                attach=TestClue(
+                    answer=
+                    '1\n'
+                    ,
+                    feedback=
+                    ''
+                )
+            ),
+            TestCase(
+                stdin=
                 '1 1\n'
-                '2\n'
+                '0\n'
+                '1\n'
                 ,
                 attach=TestClue(
                     answer=
-                    '3\n'
+                    '0\n'
                     ,
                     feedback=
                     ''
@@ -100,48 +101,17 @@ class CalcTest(StageTest):
             ),
             TestCase(
                 stdin=
+                '3 2\n'
                 '1 2\n'
-                '3 4\n'
-                '1 2\n'
-                '5 6\n'
+                '8 1\n'
+                '9 1\n'
+                '10\n'
                 ,
                 attach=TestClue(
                     answer=
-                    '8 10\n'
-                    ,
-                    feedback=
-                    ''
-                )
-            ),
-            TestCase(
-                stdin=
-                '2 1\n'
-                '1\n'
-                '2\n'
-                '2 1\n'
-                '2\n'
-                '1\n'
-                ,
-                attach=TestClue(
-                    answer=
-                    '3\n'
-                    '3\n'
-                    ,
-                    feedback=
-                    ''
-                )
-            ),
-            TestCase(
-                stdin=
-                '2 1\n'
-                '2\n'
-                '1\n'
-                '1 2\n'
-                '1 2\n'
-                ,
-                attach=TestClue(
-                    answer=
-                    'ERROR\n'
+                    '10 20\n'
+                    '80 10\n'
+                    '90 10\n'
                     ,
                     feedback=
                     ''
@@ -178,34 +148,3 @@ class CalcTest(StageTest):
 
 if __name__ == '__main__':
     CalcTest("processor.processor").run_tests()
-
-
-def convert():
-    inputs = []
-    outputs = []
-    for filename in sorted(os.listdir("cases")):
-        if filename.startswith("input") and re.match(r"^input\d+$", filename):
-            with open("cases/" + filename) as f:
-                inputs.append(f.read())
-        if filename.startswith("output") and re.match(r"^output\d+$", filename):
-            with open("cases/" + filename) as f:
-                feedback = f.readline()
-                outputs.append(TestClue(f.read(), feedback))
-
-    print('[')
-    for inp, out in zip(inputs, outputs):
-        print('    TestCase(')
-        print('        stdin=')
-        for line in inp.splitlines():
-            print('        \'' + line + '\\n\'')
-        print('        ,')
-        print('        attach=TestClue(')
-        print('            answer=')
-        for line in out.answer.splitlines():
-            print('            \'' + line + '\\n\'')
-        print('            ,\n'
-              '            feedback=')
-        print('            \'' + out.feedback.strip() + '\'')
-        print('        )')
-        print('    ),')
-    print(']')

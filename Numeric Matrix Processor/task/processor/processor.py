@@ -4,8 +4,7 @@ arr1 = []
 for i in range(m):
     arr1.append(input().strip().split())
     arr1[i] = [int(k) for k in arr1[i]]
-x, y = input().strip().split()
-x, y = int(x), int(y)
+
 arr2 = []
 for i in range(x):
     arr2.append(input().strip().split())

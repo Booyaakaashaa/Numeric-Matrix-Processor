@@ -1,8 +1,11 @@
 from math import floor
+
+
 def menu():
     choice = input("""1. Add matrices
 2. Multiply matrix by a constant
 3. Multiply matrices
+4. Transpose matrix
 0. Exit
 Your choice: """)
     return choice
@@ -59,6 +62,33 @@ def mul(mat1, r1, c1, mat2, r2, c2):
         print(*result[i])
 
 
+def transpose(mat, r, c, choice):
+    if choice == "1":
+        for i in range(r):
+            temp = []
+            for j in range(c):
+                temp.append(mat[j][i])
+            print(*temp)
+    elif choice == "2":
+        for i in range(r):
+            temp = []
+            for j in range(c):
+                temp.append(mat[c - j - 1][r - i - 1])
+            print(*temp)
+    elif choice == "3":
+        for i in range(r):
+            temp = []
+            for j in range(c):
+                temp.append(mat[i][c - j - 1])
+            print(*temp)
+    else:
+        for i in range(r):
+            temp = []
+            for j in range(c):
+                temp.append(mat[r - 1 - i][j])
+            print(*temp)
+
+
 def main():
     while 1:
         choice = menu()
@@ -90,6 +120,17 @@ def main():
             print("Enter second matrix:")
             mat2 = data(m2)
             mul(mat1, m1, n1, mat2, m2, n2)
+        elif choice == "4":
+            t_choice = input("""\n1. Main diagonal
+2. Side diagonal
+3. Vertical line
+4. Horizontal line
+Your choice: """)
+            m, n = input("Enter size of matrix: ").strip().split()
+            m, n = int(m), int(n)
+            print("Enter matrix:")
+            mat = data(m)
+            transpose(mat, m, n)
         elif choice == "0":
             break
 

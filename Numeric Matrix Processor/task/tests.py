@@ -39,6 +39,130 @@ class CalcTest(StageTest):
             ),
             TestCase(
                 stdin=
+                '4\n'
+                '1\n'
+                '3 3\n'
+                '1 7 7\n'
+                '6 6 4\n'
+                '4 2 1\n'
+                '0\n'
+                ,
+                attach=TestClue(
+                    answer=
+                    '1 6 4\n'
+                    '7 6 2\n'
+                    '7 4 1\n'
+                    ,
+                    feedback=
+                    'Probably, error in the matrix transposition algorithm'
+                )
+            ),
+            TestCase(
+                stdin=
+                '4\n'
+                '1\n'
+                '3 3\n'
+                '1 7 7\n'
+                '6 6 4\n'
+                '4 5 1\n'
+                '0\n'
+                ,
+                attach=TestClue(
+                    answer=
+                    '1 6 4\n'
+                    '7 6 5\n'
+                    '7 4 1\n'
+                    ,
+                    feedback=
+                    'Probably, error in the matrix transposition algorithm'
+                )
+            ),
+            TestCase(
+                stdin=
+                '4\n'
+                '2\n'
+                '3 3\n'
+                '1 2 4\n'
+                '4 6 6\n'
+                '7 7 1\n'
+                '0\n'
+                ,
+                attach=TestClue(
+                    answer=
+                    '1 6 4\n'
+                    '7 6 2\n'
+                    '7 4 1\n'
+                    ,
+                    feedback=
+                    'Probably, error in the matrix transposition algorithm'
+                )
+            ),
+            TestCase(
+                stdin=
+                '4\n'
+                '2\n'
+                '3 3\n'
+                '1 5 4\n'
+                '4 6 6\n'
+                '7 7 1.0\n'
+                '0\n'
+                ,
+                attach=TestClue(
+                    answer=
+                    '1 6 4\n'
+                    '7 6 5\n'
+                    '7 4 1\n'
+                    ,
+                    feedback=
+                    'Probably, error in the matrix transposition algorithm'
+                )
+            ),
+            TestCase(
+                stdin=
+                '4\n'
+                '3\n'
+                '4 4\n'
+                '6 5 4 2\n'
+                '8 7 6 6\n'
+                '1 0 0 5.0\n'
+                '9 2 8 8\n'
+                '0\n'
+                ,
+                attach=TestClue(
+                    answer=
+                    '2 4 5 6\n'
+                    '6 6 7 8\n'
+                    '5 0 0 1\n'
+                    '8 8 2 9\n'
+                    ,
+                    feedback=
+                    'Probably, error in the matrix transposition algorithm'
+                )
+            ),
+            TestCase(
+                stdin=
+                '4\n'
+                '4\n'
+                '4 4\n'
+                '8 8 2 9\n'
+                '5 0 0 1\n'
+                '6 6 7 8.0\n'
+                '2 4 5 6\n'
+                '0\n'
+                ,
+                attach=TestClue(
+                    answer=
+                    '2 4 5 6\n'
+                    '6 6 7 8\n'
+                    '5 0 0 1\n'
+                    '8 8 2 9\n'
+                    ,
+                    feedback=
+                    'Probably, error in the matrix transposition algorithm'
+                )
+            ),
+            TestCase(
+                stdin=
                 '1\n'
                 '4 4\n'
                 '-0.3 677.4 435.2 123.33\n'

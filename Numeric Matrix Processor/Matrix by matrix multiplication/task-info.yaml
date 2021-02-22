@@ -282,5 +282,8 @@ files:
         CalcTest("processor.processor").run_tests()
   learner_created: false
 feedback_link: https://hyperskill.org/projects/96/stages/530/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Mon, 22 Feb 2021 21:11:15 UTC
 record: -1

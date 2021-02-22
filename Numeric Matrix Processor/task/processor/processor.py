@@ -129,8 +129,10 @@ Your choice: """)
             m, n = input("Enter size of matrix: ").strip().split()
             m, n = int(m), int(n)
             print("Enter matrix:")
-            mat = data(m)
-            transpose(mat, m, n)
+            mat = []
+            for i in range(m):
+                mat.append(input().strip().split())
+            transpose(mat, m, n, t_choice)
         elif choice == "0":
             break
 

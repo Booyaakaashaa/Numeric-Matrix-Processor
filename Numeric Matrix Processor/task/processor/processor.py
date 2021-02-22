@@ -46,7 +46,12 @@ def const_mul(mat, r, c, val):
 def mul(mat1, r1, c1, mat2, r2, c2):
     if c1 != r2:
         print(f"The operation cannot be performed.")
-    result = [[0] * c2] * r1
+    result = []
+    for i in range(r1):
+        temp = []
+        for j in range(c2):
+            temp.append(0)
+        result.append(temp)
     for i in range(r1):
         for j in range(c2):
             for k in range(r2):

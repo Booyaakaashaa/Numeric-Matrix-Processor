@@ -12,5 +12,8 @@ files:
     print(range_sum(input_numbers, a, b))
   learner_created: false
 feedback_link: https://hyperskill.org/learn/step/7323#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 23 Feb 2021 21:58:19 UTC
 record: -1

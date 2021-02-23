@@ -5,6 +5,6 @@ def last_indexof_max(numbers):
         if numbers[i] >= top:
             top = numbers[i]
             ind = i
-
+    return ind
 
     # write the modified algorithm here

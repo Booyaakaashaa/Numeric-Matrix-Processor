@@ -7,19 +7,8 @@ files:
         # write the modified algorithm here
   learner_created: false
 feedback_link: https://hyperskill.org/learn/step/7321#comment
-status: Failed
+status: Solved
 feedback:
-  message: |
-    Failed test #1 of 5. Wrong answer
-
-    This is a sample test from the problem statement!
-
-    Test input:
-    8 11 15 15 15 12
-    Correct output:
-    4
-
-    Your code output:
-    None
-  time: Tue, 23 Feb 2021 21:51:18 UTC
+  message: <html>Correct solution</html>
+  time: Tue, 23 Feb 2021 21:52:08 UTC
 record: -1

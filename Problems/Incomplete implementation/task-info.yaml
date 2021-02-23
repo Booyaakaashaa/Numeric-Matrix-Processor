@@ -1,0 +1,13 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: |-
+    def startswith_capital_counter(names):
+
+        for name in names:
+            # ...
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7322#comment
+status: Unchecked
+record: -1

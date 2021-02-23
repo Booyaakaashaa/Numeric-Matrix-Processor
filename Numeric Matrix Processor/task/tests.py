@@ -163,6 +163,72 @@ class CalcTest(StageTest):
             ),
             TestCase(
                 stdin=
+                '5\n'
+                '3 3\n'
+                '1 2 3\n'
+                '4 5 7\n'
+                '10 22 23\n'
+                '0\n'
+                ,
+                attach=TestClue(
+                    answer=
+                    '31\n'
+                    ,
+                    feedback=
+                    'Probably, error in the determinant algorithm'
+                )
+            ),
+            TestCase(
+                stdin=
+                '5\n'
+                '4 4\n'
+                '2.65 3.54 3.88 8.99\n'
+                '3.12 5.45 7.77 5.56\n'
+                '5.31 2.23 2.33 9.81\n'
+                '1.67 1.67 1.01 9.99\n'
+                '0\n'
+                ,
+                attach=TestClue(
+                    answer=
+                    '45.2197\n'
+                    ,
+                    feedback=
+                    'Probably, error in the determinant algorithm'
+                )
+            ),
+            TestCase(
+                stdin=
+                '5\n'
+                '1 1\n'
+                '17\n'
+                '0\n'
+                ,
+                attach=TestClue(
+                    answer=
+                    '17\n'
+                    ,
+                    feedback=
+                    'Probably, error in the determinant algorithm'
+                )
+            ),
+            TestCase(
+                stdin=
+                '5\n'
+                '2 2\n'
+                '5 6\n'
+                '17 3\n'
+                '0\n'
+                ,
+                attach=TestClue(
+                    answer=
+                    '-87\n'
+                    ,
+                    feedback=
+                    'Probably, error in the determinant algorithm'
+                )
+            ),
+            TestCase(
+                stdin=
                 '1\n'
                 '4 4\n'
                 '-0.3 677.4 435.2 123.33\n'
@@ -185,6 +251,42 @@ class CalcTest(StageTest):
                     ,
                     feedback=
                     'Probably, error in the matrix adding algorithm'
+                )
+            ),
+            TestCase(
+                stdin=
+                '5\n'
+                '3 3\n'
+                '1 7 7\n'
+                '6 6 4\n'
+                '4 2 1\n'
+                '0\n'
+                ,
+                attach=TestClue(
+                    answer=
+                    '-16\n'
+                    ,
+                    feedback=
+                    'Probably, error in the determinant algorithm'
+                )
+            ),
+            TestCase(
+                stdin=
+                '5\n'
+                '5 5\n'
+                '1 2 3 4 5\n'
+                '4 5 6 4 3\n'
+                '0 0 0 1 5\n'
+                '1 3 9 8 7\n'
+                '5 8 4 7 11\n'
+                '0\n'
+                ,
+                attach=TestClue(
+                    answer=
+                    '191\n'
+                    ,
+                    feedback=
+                    'Probably, error in the determinant algorithm'
                 )
             ),
             TestCase(

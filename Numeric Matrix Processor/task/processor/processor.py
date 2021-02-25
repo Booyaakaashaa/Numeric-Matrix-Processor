@@ -6,6 +6,7 @@ def menu():
 2. Multiply matrix by a constant
 3. Multiply matrices
 4. Transpose matrix
+5. Calculate a determinant
 0. Exit
 Your choice: """)
     return choice
@@ -87,6 +88,13 @@ def transpose(mat, r, c, choice):
             for j in range(c):
                 temp.append(mat[r - 1 - i][j])
             print(*temp)
+
+
+def determinant(mat):
+    if len(mat) == 1:
+        logic = 1
+        # stopping logic i.e when size is one
+        # after that recursion will follow
 
 
 def main():

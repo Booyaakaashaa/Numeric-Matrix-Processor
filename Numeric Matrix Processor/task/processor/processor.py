@@ -91,14 +91,15 @@ def transpose(mat, r, c, choice):
 
 
 def determinant(mat, r, c, nr, nc):
+    determinant.det = 0
     if r == c:
         if r == 1:
             return mat[0][0]
         if r == 2:
             return mat[nr][nc]
-        for i in range(nr, c):
+        for i in range(nc, c):
             if i != nc:
-                return pow(-1, nr + i) * mat[nr][nc] * determinant(mat, r - 1, c - 1, nr + 1)
+                determinant.det += determinant(mat, r, c, nr + 1, i)
 
 
 

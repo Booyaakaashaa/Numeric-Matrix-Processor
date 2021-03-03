@@ -92,16 +92,8 @@ def transpose(mat, r, c, choice):
 
 def determinant(mat, r, c, nr, nc):
     determinant.det = 0
-    if r == c:
-        if r == 1:
-            return mat[0][0]
-        if r == 2:
-            return mat[nr][nc]
-        for i in range(nc, c):
-            if i != nc:
-                determinant.det += determinant(mat, r, c, nr + 1, i)
-
-
+    if r == 1:
+        return mat[0][0]
 
 
 def main():

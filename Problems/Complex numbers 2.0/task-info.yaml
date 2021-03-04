@@ -34,4 +34,7 @@ files:
   learner_created: false
 feedback_link: https://hyperskill.org/learn/step/7449#comment
 status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 04 Mar 2021 14:17:15 UTC
 record: -1

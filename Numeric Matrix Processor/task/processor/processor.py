@@ -97,15 +97,16 @@ def matrix(mat, j):
     return temp_mat
 
 
-def determinant(mat, x=0, y=0):
+def determinant(mat, x=-1):
     determinant.det = 0
     if len(mat) == 1:
         return mat[0][0]
     if len(mat) == 2:
         return mat[0][0] * mat[1][1] - mat[0][1] * mat[1][0]
+    x += 1
     for i in range(len(mat[0])):
-        sign = -1 ** (x + y)
-        determinant.det += sign * mat[0][i] * determinant(matrix(mat, i), )
+        sign = -1 ** (x + i)
+        determinant.det += sign * mat[0][i] * determinant(matrix(mat, i), x)
     return determinant.det
 
 
@@ -153,6 +154,12 @@ Your choice: """)
             for i in range(m):
                 mat.append(input().strip().split())
             transpose(mat, m, n, t_choice)
+        elif choice == "5":
+            m, n = input("Enter matrix size: ").strip().split()
+            m, n = int(m), int(n)
+            print("Enter matrix:")
+            mat = data(m)
+            print("The result is:\n{}".format(determinant(mat)))
         elif choice == "0":
             break
 

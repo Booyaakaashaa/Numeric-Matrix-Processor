@@ -90,10 +90,23 @@ def transpose(mat, r, c, choice):
             print(*temp)
 
 
-def determinant(mat, r, c, nr, nc):
+def matrix(mat, j):
+    temp_mat = []
+    for x in range(1, len(mat)):
+        temp_mat.append([mat[x][y] for y in range(len(mat[x])) if y != j])
+    return temp_mat
+
+
+def determinant(mat, x=0, y=0):
     determinant.det = 0
-    if r == 1:
+    if len(mat) == 1:
         return mat[0][0]
+    if len(mat) == 2:
+        return mat[0][0] * mat[1][1] - mat[0][1] * mat[1][0]
+    for i in range(len(mat[0])):
+        sign = -1 ** (x + y)
+        determinant.det += sign * mat[0][i] * determinant(matrix(mat, i), )
+    return determinant.det
 
 
 def main():

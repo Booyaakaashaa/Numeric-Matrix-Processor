@@ -22,7 +22,7 @@ stages:
   is_completed: true
 - id: 533
   step: 8753
-  is_completed: false
+  is_completed: true
 topics:
   0:
   - title: Introduction to matrices

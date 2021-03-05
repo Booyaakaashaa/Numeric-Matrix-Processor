@@ -104,9 +104,11 @@ def determinant(mat, x=-1):
     if len(mat) == 2:
         return mat[0][0] * mat[1][1] - mat[0][1] * mat[1][0]
     x += 1
+    sign = 1
     for i in range(len(mat[0])):
-        sign = -1 ** (x + i)
+        # sign = -1 ** (x + i)
         determinant.det += sign * mat[0][i] * determinant(matrix(mat, i), x)
+        sign = - sign
     return determinant.det
 
 

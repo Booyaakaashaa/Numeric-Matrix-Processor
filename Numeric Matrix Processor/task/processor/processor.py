@@ -1,4 +1,4 @@
-from math import floor, pow
+from math import floor
 
 
 def menu():
@@ -12,7 +12,7 @@ Your choice: """)
     return choice
 
 
-def checktype(num):
+def check_type(num):
     if floor(float(num)) == float(num):
         return int
     else:
@@ -23,7 +23,7 @@ def data(r):
     arr1 = []
     for i in range(r):
         arr1.append(input().strip().split())
-        t = checktype(arr1[0][0])
+        t = check_type(arr1[0][0])
         arr1[i] = [t(k) for k in arr1[i]]
     return arr1
 
@@ -97,6 +97,31 @@ def matrix(mat, j):
     return temp_mat
 
 
+def matrix_2(mat, i, j):
+    temp_mat = []
+    for x in range(len(mat)):
+        if x == i:
+            continue
+        temp_mat.append([mat[x][y] for y in range(len(mat[x])) if y != j])
+    return temp_mat
+
+
+def inverse(mat):
+    det = determinant(mat)
+    if not det:
+        return 0
+    minors = [[0] * len(mat[0])] * len(mat)
+    for i in range(len(mat)):
+        for j in range(len(mat[i])):
+            minors[i][j] = -1 ** (i + j) * determinant(matrix_2(mat, i, j))
+
+    inverse_mat = [[0] * len(mat[0])] * len(mat)
+    for i in range(len(mat)):
+        for j in range(len(mat[i])):
+            inverse_mat[i][j] = mat[j][i] / det
+    return inverse_mat
+
+
 def determinant(mat):
     determinant.det = 0
     if len(mat) == 1:
@@ -129,7 +154,7 @@ def main():
             print("Enter matrix:")
             mat = data(m)
             const = input("Enter constant: ")
-            t = checktype(const)
+            t = check_type(const)
             const_mul(mat, m, n, t(const))
         elif choice == "3":
             m1, n1 = input("Enter size of first matrix: ").strip().split()
@@ -160,6 +185,18 @@ Your choice: """)
             print("Enter matrix:")
             mat = data(m)
             print("The result is:\n{}".format(determinant(mat)))
+        elif choice == "6":
+            m, n = input("Enter matrix size: ").strip().split()
+            m, n = int(m), int(n)
+            print("Enter matrix:")
+            mat = data(m)
+            print("The result is:\n")
+            inverse_mat = inverse(mat)
+            if inverse_mat:
+                for i in range(len(mat)):
+                    print(*inverse_mat[i])
+            else:
+                print("This matrix doesn't have an inverse.")
         elif choice == "0":
             break
 

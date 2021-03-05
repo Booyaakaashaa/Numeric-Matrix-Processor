@@ -7,6 +7,7 @@ def menu():
 3. Multiply matrices
 4. Transpose matrix
 5. Calculate a determinant
+6. Inverse matrix
 0. Exit
 Your choice: """)
     return choice
@@ -110,15 +111,16 @@ def inverse(mat):
     det = determinant(mat)
     if not det:
         return 0
-    minors = [[0] * len(mat[0])] * len(mat)
+    minors = [[0 for i in range(len(mat))] for j in range(len(mat))]
+    sign = 1
     for i in range(len(mat)):
         for j in range(len(mat[i])):
-            minors[i][j] = -1 ** (i + j) * determinant(matrix_2(mat, i, j))
-
-    inverse_mat = [[0] * len(mat[0])] * len(mat)
+            minors[i][j] = sign * determinant(matrix_2(mat, i, j))
+            sign = -sign
+    inverse_mat = [[0 for i in range(len(mat))] for j in range(len(mat))]
     for i in range(len(mat)):
         for j in range(len(mat[i])):
-            inverse_mat[i][j] = mat[j][i] / det
+            inverse_mat[i][j] = minors[j][i] / det
     return inverse_mat
 
 

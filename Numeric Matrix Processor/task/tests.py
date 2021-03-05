@@ -291,6 +291,65 @@ class CalcTest(StageTest):
             ),
             TestCase(
                 stdin=
+                '6\n'
+                '3 3\n'
+                '2 -1 0\n'
+                '0 1 2\n'
+                '1 1 0\n'
+                '0\n'
+                ,
+                attach=TestClue(
+                    answer=
+                    '0.33 0 0.33\n'
+                    '-0.33 0 0.66\n'
+                    '0.16 0.5 -0.33\n'
+                    ,
+                    feedback=
+                    'Probably, error in the matrix inversion algorithm'
+                )
+            ),
+            TestCase(
+                stdin=
+                '6\n'
+                '3 3\n'
+                '0.396796 -0.214938 0.276735\n'
+                '5.19655 -2.06983 -0.388886\n'
+                '-3.3797 1.50219 0.159794\n'
+                '0\n'
+                ,
+                attach=TestClue(
+                    answer=
+                    '1.14717 2.03717 2.9711\n'
+                    '2.19055 4.52055 7.20788\n'
+                    '3.67009 0.590087 1.33819\n'
+                    ,
+                    feedback=
+                    'Probably, error in the matrix inversion algorithm'
+                )
+            ),
+            TestCase(
+                stdin=
+                '6\n'
+                '4 4\n'
+                '2.65 3.54 3.88 8.99\n'
+                '3.12 5.45 7.77 5.56\n'
+                '5.31 2.23 2.33 9.81\n'
+                '1.67 1.67 1.01 9.99\n'
+                '0\n'
+                ,
+                attach=TestClue(
+                    answer=
+                    '0.396796 -0.214938 0.276735 -0.5092\n'
+                    '5.19655 -2.06983 -0.388886 -3.14252\n'
+                    '-3.3797 1.50219 0.159794 2.04842\n'
+                    '-0.593332 0.230065 0.00259267 0.50345\n'
+                    ,
+                    feedback=
+                    'Probably, error in the matrix inversion algorithm'
+                )
+            ),
+            TestCase(
+                stdin=
                 '2\n'
                 '3 3\n'
                 '11 234 444\n'

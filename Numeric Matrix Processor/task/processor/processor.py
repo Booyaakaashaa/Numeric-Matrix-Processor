@@ -1,4 +1,4 @@
-from math import floor
+from math import floor, pow
 
 
 def menu():
@@ -112,11 +112,10 @@ def inverse(mat):
     if not det:
         return 0
     minors = [[0 for i in range(len(mat))] for j in range(len(mat))]
-    sign = 1
     for i in range(len(mat)):
         for j in range(len(mat[i])):
+            sign = int(pow(-1, (i + j)))
             minors[i][j] = sign * determinant(matrix_2(mat, i, j))
-            sign = -sign
     inverse_mat = [[0 for i in range(len(mat))] for j in range(len(mat))]
     for i in range(len(mat)):
         for j in range(len(mat[i])):
